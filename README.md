@@ -1,6 +1,6 @@
 # ansible-role-client-cert-update #
 
-[![Build Status](https://travis-ci.com/cisagov/ansible-role-client-cert-update.svg?branch=develop)](https://travis-ci.com/cisagov/ansible-role-client-cert-update)
+[![GitHub Build Status](https://github.com/cisagov/ansible-role-client-cert-update/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-client-cert-update/actions)
 [![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/ansible-role-client-cert-update.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-client-cert-update/alerts/)
 [![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-client-cert-update.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-client-cert-update/context:python)
 
@@ -15,9 +15,16 @@ None.
 
 None.
 
+<!--
+| Variable | Description | Default | Required |
+|----------|-------------|---------|----------|
+| optional_variable | Describe its purpose. | `default_value` | No |
+| required_variable | Describe its purpose. | n/a | Yes |
+-->
+
 ## Dependencies ##
 
-None.
+- [cisagov/ansible-role-docker](https://github.com/cisagov/ansible-role-docker)
 
 ## Example Playbook ##
 
@@ -28,12 +35,12 @@ Here's how to use it in a playbook:
   become: yes
   become_method: sudo
   roles:
-    - client-cert-update
+    - client_cert_update
 ```
 
 ## Contributing ##
 
-We welcome contributions!  Please see [here](CONTRIBUTING.md) for
+We welcome contributions!  Please see [`CONTRIBUTING.md`](CONTRIBUTING.md) for
 details.
 
 ## License ##
