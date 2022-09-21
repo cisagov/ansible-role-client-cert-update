@@ -6,10 +6,8 @@
     state: directory
     mode: 0755
 
-- name: Download and untar the client-cert-update tarball
-  ansible.builtin.unarchive:
-    src: https://api.github.com/repos/cisagov/client-cert-update/tarball/develop
+- name: Install the Docker Compose configuration
+  ansible.builtin.copy:
     dest: /var/cyhy/client-cert-update
-    remote_src: yes
-    extra_opts:
-      - "--strip-components=1"
+    mode: 0644
+    src: docker-compose.yml
