@@ -22,8 +22,12 @@ def test_packages(host, directory):
     assert oct(host.file(directory["path"]).mode) == directory["mode"]
 
 
-@pytest.mark.parametrize("f", ["/var/cyhy/client-cert-update/docker-compose.yml"])
-def test_command(host, f):
+@pytest.mark.parametrize(
+    "file",
+    [{"path": "/var/cyhy/client-cert-update/docker-compose.yml", "mode": "0o644"}],
+)
+def test_command(host, file):
     """Test that appropriate files exist."""
-    assert host.file(f).exists
-    assert host.file(f).is_file
+    assert host.file(file["path"]).exists
+    assert host.file(file["path"]).is_file
+    assert oct(host.file(file["path"]).mode) == file["mode"]
