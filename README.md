@@ -1,8 +1,7 @@
 # ansible-role-client-cert-update #
 
 [![GitHub Build Status](https://github.com/cisagov/ansible-role-client-cert-update/workflows/build/badge.svg)](https://github.com/cisagov/ansible-role-client-cert-update/actions)
-[![Total alerts](https://img.shields.io/lgtm/alerts/g/cisagov/ansible-role-client-cert-update.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-client-cert-update/alerts/)
-[![Language grade: Python](https://img.shields.io/lgtm/grade/python/g/cisagov/ansible-role-client-cert-update.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/g/cisagov/ansible-role-client-cert-update/context:python)
+[![CodeQL](https://github.com/cisagov/ansible-role-client-cert-update/workflows/CodeQL/badge.svg)](https://github.com/cisagov/ansible-role-client-cert-update/actions/workflows/codeql-analysis.yml)
 
 An Ansible role for installing
 [cisagov/client-cert-update](https://github.com/cisagov/client-cert-update).
@@ -34,8 +33,10 @@ Here's how to use it in a playbook:
 - hosts: docker
   become: yes
   become_method: sudo
-  roles:
-    - client_cert_update
+  tasks:
+    - name: Install the client-cert-update composition
+      ansible.builtin.include_role:
+        name: client_cert_update
 ```
 
 ## Contributing ##
