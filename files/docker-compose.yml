@@ -24,7 +24,7 @@ services:
     environment:
       - AWS_CONFIG_FILE=/run/secrets/aws_config
       - AWS_PROFILE=default
-    image: dhsncats/client-cert-update:0.0.2
+    image: cisagov/client-cert-update:0.1.0
     secrets:
       - source: aws_config
         target: aws_config
