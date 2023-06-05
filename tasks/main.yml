@@ -2,9 +2,9 @@
 # tasks file for code_gov_update
 - name: Create the /var/cyhy/client-cert-update directory
   ansible.builtin.file:
+    mode: 0755
     path: /var/cyhy/client-cert-update
     state: directory
-    mode: 0755
 
 - name: Install the Docker Compose configuration
   ansible.builtin.copy:
