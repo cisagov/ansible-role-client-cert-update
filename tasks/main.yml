@@ -2,12 +2,16 @@
 # tasks file for code_gov_update
 - name: Create the /var/cyhy/client-cert-update directory
   ansible.builtin.file:
+    group: "{{ client_cert_update_file_owner_group | default(omit) }}"
     mode: 0755
+    owner: "{{ client_cert_update_file_owner_username | default(omit) }}"
     path: /var/cyhy/client-cert-update
     state: directory
 
 - name: Install the Docker Compose configuration
   ansible.builtin.copy:
     dest: /var/cyhy/client-cert-update
+    group: "{{ client_cert_update_file_owner_group | default(omit) }}"
     mode: 0644
+    owner: "{{ client_cert_update_file_owner_username | default(omit) }}"
     src: docker-compose.yml
