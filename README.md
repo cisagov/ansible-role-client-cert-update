@@ -30,8 +30,8 @@ None.
 Here's how to use it in a playbook:
 
 ```yaml
-- hosts: docker
-  become: yes
+- hosts: all
+  become: true
   become_method: sudo
   tasks:
     - name: Install the client-cert-update composition
